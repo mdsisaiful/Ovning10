@@ -1,0 +1,36 @@
+.card-header{
+    background-color: lightcyan;
+}
+body > div.card.text-center > div.card-body{
+    margin: 0px;
+    background-color: lightgoldenrodyellow;
+}
+body {
+    background-color: rgb(247, 246, 246);
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+    .main p{
+        font-family: Verdana;
+        color: red;
+    }
+
+.form-control {
+    padding-left: 2.375rem;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightskyblue;
+    color: white;
+    text-align: center;
+ }
