@@ -1,6 +1,6 @@
 // Selectors
 const cardBtn = document.querySelector('#card-button');
-const imgOutput = document.querySelector('#image-output');
+let imgOutput = document.querySelector('#image-output');
 const baseUrl = 'https://deckofcardsapi.com/api/deck/new/draw/?count=1'
 
 
@@ -19,15 +19,15 @@ const getAPi = () => {
 
         imgOutput.innerHTML = '';
 
-        data.res.forEach(post => {
-            const img = post.image;
-            const cardImg = document.createElement('IMAGE');
+        // data.res.forEach(post => {
+            const img = data.cards[0].image;
+            const cardImg = document.createElement('IMG');
             // let input = cardImg.setAttribute('src', img);
            cardImg.setAttribute('src', img);
             // cardImg.innerHTM = input;
             imgOutput.appendChild(cardImg);
 
-        })
+        // })
     })
     .catch(error => {
         console.log('fel! ' + error);

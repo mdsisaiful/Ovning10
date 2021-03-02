@@ -1,15 +1,15 @@
 
 // Selectors
 const searchBtn = document.querySelector('#search-button');
-const searchOutput = document.querySelector('#search-output');
+let searchOutput = document.querySelector('#search-output');
 const searchInput = document.querySelector('#search-input');
-const baseUrl = 'https://www.swapi.tech/api/people/'
+const baseUrl = 'https://www.swapi.tech/api/people/?name='
 
 
 // function
 const getAPi = () => {
     console.log(baseUrl + searchInput.value);
-    fetch(baseUrl, {
+    fetch(baseUrl + searchInput.value, {
         method : 'GET',
         headers: {
             'Accept' : 'application/json'
@@ -20,14 +20,17 @@ const getAPi = () => {
         console.log(data);
 
         searchOutput.innerHTML = '';
+        
 
-        data.res.forEach(post => {
+        let prop = data.result[0].properties;
+        // data.res.forEach(post => {
             searchOutput.innerHTML +=
+            
             `
-            Height: ${post.height}, Mass: ${post.mass},
-            Gender: ${post.gender}, Hair Color: ${post.hair_color},
+            Height: ${prop.height}, Mass: ${prop.mass},
+            Gender: ${prop.gender}, Hair Color: ${prop.hair_color},
             `
-        })
+        // })
     })
     .catch(error => {
         console.log('fel! ' + error);
